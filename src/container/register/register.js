@@ -4,6 +4,8 @@ import { PrimaryButton, SecondaryButton } from '../../components/cta';
 import { Input } from '../../components/form';
 import ConfirmationModal from '../../components/modals/confirmationModal';
 import CourseDetails from '../../components/modals/courseDetails';
+import SuccessIllustration from "../../assets/images/success.svg";
+import NodataIllustration from "../../assets/images/404.svg";
 import { DataContext } from '../../context/dataContext';
 import APIGet from '../../hooks/get';
 
@@ -213,7 +215,9 @@ const Register = () => {
                                     : registrationComplete ?
                                         <div className="t-form-wrapper w-100">
                                             <div className="container d-flex flex-column align-items-center py-5 t-no-data">
-                                                <div className="t-success-illustration"></div>
+                                                <div className="t-success-illustration d-flex align-items justify-content-center">
+                                                    <img src={SuccessIllustration} alt="Success Illustration" />
+                                                </div>
                                                 <h3 className="fw-bold mb-0 pb-2 text-center">Registration Successful.</h3>
                                                 <h5 className="fw-bold text-center px-5 pb-4">Congratulation. You have successfully completed your registration.</h5>
                                                 <div className="w-100">
@@ -278,7 +282,9 @@ const Register = () => {
                                                                 :
                                                                 <div className="col-lg-12">
                                                                     <div className="w-100 d-flex flex-column align-items-center t-no-data pb-4">
-                                                                        <div className="t-not-found-illustration"></div>
+                                                                        <div className="t-not-found-illustration d-flex align-items justify-content-center">
+                                                                            <img src={NodataIllustration} alt="Not Found Illustration" />
+                                                                        </div>
                                                                         <h5 className="fw-bold text-center px-5 pb-4">No courses found. Please try after sometime or try changing the hours available.</h5>
                                                                         <div className="w-100">
                                                                             <SecondaryButton name="Back" fullWidth={true} click={() => setCourseSelection(false)} />
