@@ -175,7 +175,7 @@ const Register = () => {
                                                         placeholder="Parent's mail ID"
                                                         required={true} />
                                                 </div>
-                                                <div className="col-lg-4">
+                                                <div className="col-lg-6">
                                                     <Input
                                                         label="Age*"
                                                         type="number"
