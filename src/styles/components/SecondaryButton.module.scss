@@ -1,0 +1,67 @@
+@import '../global';
+
+.t_btn_wrapper{
+  position: relative;
+  width: max-content;
+  height: max-content;
+  border-radius: 40px;
+  box-shadow: 2px 2px 8px #0003;
+  overflow: hidden;
+  .t_btn{
+    width: max-content;
+    height: max-content;
+    padding: $size-6 $size-12;
+    background-color: #fff0;
+    // background-image: linear-gradient(90deg, $primary_btn_color 10%, $secondary_btn_color 90%);
+    border: $size-2 solid $secondary_btn_color;
+    border-radius: 40px;
+    transition: 0.3s ease-in;
+    span{
+      position: relative;
+      z-index: 1;
+      color: $secondary_btn_color;
+      font-weight: 600;
+      font-size: $size-16;
+      line-height: $size-20;
+      transition: 0.3s ease-in;
+    }
+    &::after{
+      content: "";
+      width: 0;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(90deg, $primary_hover_bg 5%, $secondary_hover_bg 95%);
+      opacity: 0;
+      transition: 0.3s ease-in;
+      transform: translate(0, 0);
+    }
+  }
+  &:hover{
+    box-shadow: 2px 2px 6px #0004;
+    .t_btn{
+        span{
+            color: $white;
+        }
+        &:after{
+            width: 100%;
+            opacity: 1;
+        }
+    }
+  }
+  &.t_full_width{
+    width: 100%;
+    .t_btn{
+      width: 100%;
+      padding: $size-12;
+    }
+  }
+  &.t_btn_disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+    .t_btn{
+      pointer-events: none;
+    }
+  }
+}

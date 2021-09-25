@@ -1,0 +1,55 @@
+@import "./../global";
+
+.t_input_wrap{
+    position: relative;
+    padding: 0!important;
+    margin: $size-26 0;
+    .t_input_box{
+        width: 100%;
+        background: #fff0;
+        border: 1px solid $primary_border_color;
+        box-sizing: border-box;
+        border-radius: 8px;
+        padding: $size-14 $size-12;
+        font-size: $size-14;
+        line-height: $size-20;
+        letter-spacing: 0.25px;
+        color: $primary_black;
+        outline: none!important;
+        transition: 0.3s ease;
+        &::placeholder{
+            color: $primary_border_color;
+        }
+        &:focus{
+            border: 1px solid $secondary_btn_color;
+            color: $primary_black;
+        }
+    }
+    label{
+        position: absolute;
+        top: -$size-26;
+        left: 0;
+        background: #fff0;
+        transition: all .3s ease-out;
+        font-weight: 500;
+        font-size: $size-14;
+        line-height: $size-17;
+        color: $primary_text_color;
+        pointer-events: none;
+    }
+    &.t_input_disabled{
+      .t_input_box{
+        opacity: 0.8;
+        pointer-events: none;
+      }
+      opacity: 0.8;
+      cursor: not-allowed;
+    }
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+}

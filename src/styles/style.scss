@@ -1,0 +1,246 @@
+@charset "utf-8";
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+#root{
+  width: 100vw;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+@import "./global";
+@import "./partials/modal";
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  color: $primary_black;
+  background: $primary_bg_color;
+}
+/*Font*/
+body, input, button, a{
+  font-family: 'Poppins', sans-serif;
+}
+
+
+h3{
+  font-weight: 600;
+  font-size: $size-24;
+  line-height: $size-30;
+}
+h4{
+  font-weight: 600;
+  font-size: $size-18;
+  line-height: $size-22;
+}
+h5{
+  font-weight: 600;
+  font-size: $size-16;
+  line-height: $size-20;
+}
+h6{
+  font-weight: 600;
+  font-size: $size-14;
+  line-height: $size-17;
+}
+p, li{
+  font-weight: normal;
+  font-size: $size-14;
+  line-height: $size-17;
+}
+a{
+  font-weight: normal;
+  font-size: $size-14;
+  line-height: $size-17;
+  color: $primary_blue!important;
+  text-decoration: none !important;
+  transition: 0.3s ease;
+}
+a:hover{
+  text-decoration: underline !important;
+}
+.t-app-wrapper{
+  height: 100vh;
+}
+.t-logo{
+  color: $secondary_btn_color !important;
+  font-size: $size-20;
+  font-weight: 700;
+  transition: 0.3s ease;
+  &.t-logo-white{
+    color: $white !important;
+  }
+}
+.t-home-container{
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(90deg, #ed6ea000 10%, #ec8c6900 90%);
+  transition: 0.3s ease-in;
+  .t-action-btn-wrapper{
+    button{
+      padding: $size-16 $size-30;
+      font-size: $size-18;
+    }
+  }
+  .t-cover-illustration-wrapper{
+    width: 60%;
+    transition: 0.3s ease;
+    img{
+      width: 100%;
+      max-height: 350px;
+      object-fit: contain;
+      transition: 0.3s ease;
+    }
+  }
+}
+.t-home-condensed{
+  width: 50vw;
+  background-image: linear-gradient(90deg, #ed6ea0 10%, #ec8c69 90%);
+}
+.t-register-wrapper{
+  width: 50vw;
+  height: 100vh;
+  .t-register-container{
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  .t-form-wrapper{
+    padding: $size-40;
+    background:  $primary_bg_color;
+    border-radius: 8px;
+    box-shadow:  8px 8px 16px #d5d5d5,
+             -8px -8px 16px #ebebeb;
+  }
+}
+.t-enlarge-in{
+  animation: enlargeAnime 0.3s ease-in;
+}
+.t-fade-in{
+  animation: fadeInAnime 0.6s ease;
+}
+
+@keyframes enlargeAnime {
+  from{
+    width: 0vw;
+  }
+  to{
+    width: 50vw;
+  }
+}
+
+@keyframes fadeInAnime {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@for $i from 1 through 5{
+  .t-margin-y-#{$i}0{
+    margin-top: 10vh * $i;
+    margin-bottom: 10vh * $i;
+  }
+}
+
+.e-input-error{
+  label{
+    color: $warning_color !important;
+  }
+  input{
+    border-color: $warning_color !important;
+    color: $warning_color !important;
+  }
+}
+
+/* Empty */
+.t-no-data{
+  .t-not-found-illustration{
+    width: 100%;
+    height: 250px;
+    background-image: url(../assets/images/404.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  h5{
+    color: $primary_grey;
+    opacity: 0.8;
+  }
+}
+.t-success-illustration{
+  width: 100%;
+  height: 280px;
+  background-image: url(../assets/images/success.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Loader */
+.t-loader{
+  border: 5px solid #ffffff00;
+  border-top: 5px solid $secondary_btn_color;
+  border-bottom: 5px solid $secondary_btn_color;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: loaderAnime 1s infinite linear;
+}
+@keyframes loaderAnime{
+  from{ transform: rotate(0deg); }
+  to{ transform: rotate(360deg); }
+}
+
+.t-courses-card{
+  padding: $size-16;
+  box-shadow:  4px 4px 8px #d5d5d5,
+  -4px -4px 8px #ebebeb;
+  cursor: pointer;
+  color: $primary_grey;
+  border: 1px solid #fff0;
+  transition: 0.3s ease;
+  h5{
+    color: $primary_text_color;
+  }
+  .t-view-more{
+    font-size: $size-12;
+    color: $primary_blue;
+    transition: 0.3s ease;
+    &:hover{
+      color: $primary_text_color;
+    }
+  }
+  .t-selected-icon{
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: 0.3s ease;
+  }
+  &.t-card-active{
+    border: 1px solid $secondary_hover_bg;
+    .t-selected-icon{
+      opacity: 1;
+    }
+  }
+}
+.t-text-btn{
+  color: $secondary_btn_color;
+  font-weight: 600;
+  font-size: $size-16;
+  line-height: $size-20;
+  transition: 0.3s ease-in;
+  cursor: pointer;
+  &:hover{
+    color: $primary_hover_bg;
+  }
+}
+.t-error{
+  color: $warning_color;
+}

@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import "./global";
+
+/* ==============================
+   Small desktop
+   ============================== */
+
+@media only screen and (max-width: 1366px) {
+  
+}
+
+@media only screen and (max-width: 1270px) {
+
+
+}
+
+@media only screen and (max-width: 1200px) {
+
+}
+
+
+@media only screen and (max-width: 1199px) {
+
+}
+
+/* ==============================
+   Tablet landskape
+   ============================== */
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 992px) {
+
+}
+
+/* ==============================
+   Tablet Portrait
+   ============================== */
+@media only screen and (max-width: 768px) {
+   .t-home-condensed{
+      display: none;
+   }
+   .t-register-wrapper{
+      width: 100vw;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .t-register-container{
+         height: auto;
+      }
+   }
+}
+
+/* ==============================
+   Phone
+   ============================== */
+@media only screen and (max-width: 575px) {
+
+}
+
+@media only screen and (max-width: 380px) {
+
+}
+
+
+/* ==============================
+   Small Phone
+   ============================== */
+@media only screen and (max-width: 319px) {
+
+
+}

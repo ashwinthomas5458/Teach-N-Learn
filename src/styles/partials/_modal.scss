@@ -1,0 +1,20 @@
+
+.modal-backdrop{
+    background-color: #e0e0e0 !important;
+}
+.modal-content{
+    background-color: #e0e0e0;
+    border: none !important;
+    box-shadow:  8px 8px 16px #66666630,
+    -8px -8px 16px #ebebeb30;
+    padding: $size-30;
+    .btn-close:focus{
+        box-shadow: none !important;
+    }
+}
+.t-course-details-modal{
+    color: $primary_grey;
+    h3{
+        color: $primary_text_color; 
+    }
+}
